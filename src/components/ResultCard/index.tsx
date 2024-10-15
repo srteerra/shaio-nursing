@@ -86,7 +86,6 @@ export const ResultCard = ({ code, definition, name, service, system }: Props) =
       </div>
 
       <button
-        onClick={handleClick}
         style={{ zIndex: 3, position: "absolute", right: 20 }}
         className={"cardBtns bg-red-700 h-[80%] rounded-full flex items-center justify-center p-4"}
       >
