@@ -1,0 +1,7 @@
+.cardBtns {
+    display: none;
+}
+
+.cardContainer:hover .cardBtns {
+    display: block;
+}
