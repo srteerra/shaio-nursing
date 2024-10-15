@@ -39,7 +39,9 @@ export const TiSelect = forwardRef(({
         ref={ref}
         className={"shadow-md rounded-full bg-white"}
         placeholder={placeholder}
+        menuPortalTarget={document.body}
         styles={{
+          menuPortal: base => ({ ...base, zIndex: 9999 }),
           control: (provided, state) => ({
             ...provided,
             cursor: 'pointer',

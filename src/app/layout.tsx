@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 const Outfit_F = Outfit({
   subsets: ['latin'],
   display: 'swap',
-  //👇 Add variable to our object
   variable: '--font-Outfit',
 })
 
