@@ -6,6 +6,7 @@ export const TiSelect = forwardRef(({
   options = [],
   className = '',
   label = '',
+  style,
   onChange,
   defaultInputValue,
   isClearable = true,
