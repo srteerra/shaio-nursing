@@ -16,7 +16,7 @@ interface DiagnosisActions {
 }
 
 export const useDiagnosisStore = create(
-  persist<DiagnosisState & DiagnosisActions>((set) => ({
+  persist<DiagnosisState & DiagnosisActions>((set, get) => ({
     diagnosis: [],
     query: "",
     systemsOptions: [],
