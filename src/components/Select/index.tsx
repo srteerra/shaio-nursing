@@ -18,8 +18,8 @@ export const TiSelect = forwardRef(({
   useEffect(() => {
     if (!isMulti) {
       let optionValue;
-      if (typeof value != 'object') optionValue = options.find(option => ('value' in option) && option.value == value);
-      else optionValue = options.find(option => ('value' in option) && option.value == value?.value);
+      if (typeof value != 'object') optionValue = options.find((option: any) => ('value' in option) && option.value == value);
+      else optionValue = options.find((option: any) => ('value' in option) && option.value == value?.value);
 
       setCurrentValue(optionValue || null);
       if (JSON.stringify(value) !== JSON.stringify(optionValue)) onChange(optionValue);
