@@ -5,8 +5,8 @@ import { useEffect, useMemo, useState } from "react";
 export const useDiagnosis = () => {
   const db = useFirebase({ collectionPath: "diagnosis" });
 
-  const [selectedSystem, setSelectedSystem] = useState();
-  const [selectedService, setSelectedService] = useState();
+  const [selectedSystem, setSelectedSystem] = useState<any>();
+  const [selectedService, setSelectedService] = useState<any>();
 
   const setDiagnosis = useDiagnosisStore(state => state.setDiagnosis);
   const query = useDiagnosisStore(state => state.query);
