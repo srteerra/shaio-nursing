@@ -12,7 +12,7 @@ export const TiSelect = forwardRef(({
   value,
   isMulti = false,
   ...props
-}, ref: any) => {
+}: any, ref: any) => {
   const [currentValue, setCurrentValue] = useState(value);
 
   useEffect(() => {
