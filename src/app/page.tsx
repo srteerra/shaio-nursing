@@ -77,7 +77,7 @@ export default function Home() {
         </div>
       </div>
 
-      {!!window.scrollY &&
+      {window && !!window.scrollY &&
         <button
           className={"btn fixed bg-red-500 border-none cursor-pointer text-white bottom-12 z-30 rounded-full right-12"}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
