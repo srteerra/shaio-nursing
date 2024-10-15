@@ -73,7 +73,7 @@ export const TiSelect = forwardRef(({
         options={options}
         isClearable
         onChange={onChange}
-        defaultValue={options.find(option => option.value === defaultInputValue)}
+        defaultValue={options.find((option: any) => option.value === defaultInputValue)}
         noOptionsMessage={() => 'No hay opciones disponibles'}
         value={currentValue}
       />
