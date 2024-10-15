@@ -6,7 +6,6 @@ export const TiSelect = forwardRef(({
   options = [],
   className = '',
   label = '',
-  style,
   onChange,
   defaultInputValue,
   isClearable = true,
@@ -30,7 +29,7 @@ export const TiSelect = forwardRef(({
   }, [value, options]);
 
   return (
-    <div className={`min-w-[250px] lg:max-w-[250px] flex-1 ${className}`}>
+    <div style={{ zIndex: 3 }} className={`min-w-[250px] lg:max-w-[250px] flex-1 ${className}`}>
       {label && (
         <label style={{ marginLeft: 5, fontSize: 12 }} className={"text-gray-800"}><strong>{label}</strong></label>
       )}

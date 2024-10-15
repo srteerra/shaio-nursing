@@ -26,7 +26,6 @@ export default function Home() {
 
           <aside className={"w-full flex flex-wrap items-end flex-row gap-4 my-10"}>
             <TiSelect
-              style={{ zIndex: 3 }}
               value={selectedSystem}
               onChange={setSelectedSystem}
               label={"Sistema"}
@@ -34,7 +33,6 @@ export default function Home() {
               placeholder={"Seleccionar"}
             />
             <TiSelect
-              style={{ zIndex: 3 }}
               value={selectedService}
               onChange={setSelectedService}
               label={"Servicio"}
