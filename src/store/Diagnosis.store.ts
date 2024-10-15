@@ -16,26 +16,28 @@ interface DiagnosisActions {
 }
 
 export const useDiagnosisStore = create(
-  persist<DiagnosisState & DiagnosisActions>((set, get) => ({
-    diagnosis: [],
-    query: "",
-    systemsOptions: [],
-    servicesOptions: [],
-    setQuery: (query) => {
-      set({ query });
-    },
-    setSystemsOptions: (items) => {
-      set({ systemsOptions: items });
-    },
-    setServicesOptions: (items) => {
-      set({ servicesOptions: items });
-    },
-    setDiagnosis: (items) => {
-      set({ diagnosis: items });
+  persist<DiagnosisState & DiagnosisActions>(
+    (set, get) => ({
+      diagnosis: [],
+      query: "",
+      systemsOptions: [],
+      servicesOptions: [],
+      setQuery: (query) => {
+        set({ query });
+      },
+      setSystemsOptions: (items) => {
+        set({ systemsOptions: items });
+      },
+      setServicesOptions: (items) => {
+        set({ servicesOptions: items });
+      },
+      setDiagnosis: (items) => {
+        set({ diagnosis: items });
+      }
+    }),
+    {
+      name: "diagnosis-storage",
+      storage: createJSONStorage(() => sessionStorage)
     }
-  })),
-  {
-    name: "diagnosis-storage",
-    storage: createJSONStorage(() => sessionStorage)
-  }
+  )
 );
