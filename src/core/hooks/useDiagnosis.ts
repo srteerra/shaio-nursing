@@ -19,7 +19,7 @@ export const useDiagnosis = () => {
   const getSystems = async () => {
     const data = await db.collectionWithIds([], "systems");
     setSystemsOptions(
-      data.map((item) => ({
+      data.map((item: any) => ({
         label: item.name,
         value: item.id,
         }
@@ -30,7 +30,7 @@ export const useDiagnosis = () => {
   const getServices = async () => {
     const data = await db.collectionWithIds([], "services");
     setServicesOptions(
-      data.map((item) => ({
+      data.map((item: any) => ({
         label: item.name,
         value: item.id,
         }
@@ -50,9 +50,9 @@ export const useDiagnosis = () => {
 
   const filteredDiagnosis = useMemo(() => {
     return diagnosis
-      .filter((item) => !selectedSystem || item.system.id == selectedSystem.value)
-      .filter((item) => !selectedService || item.service.id == selectedService.value)
-      .filter((item) => !query || item.name.toLowerCase().includes(query.toLowerCase())
+      .filter((item: any) => !selectedSystem || item.system.id == selectedSystem.value)
+      .filter((item: any) => !selectedService || item.service.id == selectedService.value)
+      .filter((item: any) => !query || item.name.toLowerCase().includes(query.toLowerCase())
         || item.definition.toLowerCase().includes(query.toLowerCase())
         || item.code.toLowerCase().includes(query.toLowerCase())
       )
