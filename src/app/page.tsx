@@ -9,12 +9,19 @@ import Logo from "@/assets/ShaioLogo.png";
 import { useDiagnosis } from "@/core/hooks/useDiagnosis";
 import { useDiagnosisStore } from "@/store/Diagnosis.store";
 import { ArrowUp } from "react-feather";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const systemsOptions = useDiagnosisStore(state => state.systemsOptions);
   const servicesOptions = useDiagnosisStore(state => state.servicesOptions);
 
   const { filteredDiagnosis, setSelectedService, setSelectedSystem, handleResetFilters, selectedSystem, selectedService } = useDiagnosis();
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <main className={"w-full h-full min-h-screen grid grid-cols-12 pt-12 pb-24"}>
@@ -77,7 +84,7 @@ export default function Home() {
         </div>
       </div>
 
-      {window && !!window.scrollY &&
+      {isClient && window.scrollY > 0 &&
         <button
           className={"btn fixed bg-red-500 border-none cursor-pointer text-white bottom-12 z-30 rounded-full right-12"}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
