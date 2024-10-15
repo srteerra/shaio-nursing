@@ -14,6 +14,11 @@ export const TiSelect = forwardRef(({
   ...props
 }: any, ref: any) => {
   const [currentValue, setCurrentValue] = useState(value);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     if (!isMulti) {
@@ -28,6 +33,7 @@ export const TiSelect = forwardRef(({
     }
   }, [value, options]);
 
+  if (!isClient) return <></>;
   return (
     <div style={{ zIndex: 3 }} className={`min-w-[250px] lg:max-w-[250px] flex-1 ${className}`}>
       {label && (
